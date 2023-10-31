@@ -1,0 +1,48 @@
+﻿<Window x:Class="Yarah.AftrekkenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Yarah"
+        mc:Ignorable="d"
+        Title="AftrekkenWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/CloudsBackground.png"/>
+    </Window.Background>
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <!-- Left section for "Menu" button -->
+                <ColumnDefinition Width="400"/>
+                <!-- Middle section for buttons -->
+                <ColumnDefinition Width="200"/>
+                <!-- Right section for image and counter -->
+            </Grid.ColumnDefinitions>
+            <!-- Buttons for "Rekenen," "Taal," and "Aardrijkskunde" in the middle -->
+            <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                <!-- Problem statement -->
+                <TextBlock Name="ProblemText" Text="What is 7 - 3?" FontSize="20" Margin="10"/>
+
+                <!-- Answer input field -->
+                <TextBox Name="AnswerInput" FontSize="20" Margin="10"/>
+
+                <!-- Button to check the answer -->
+                <Button Name="CheckAnswerButton" Content="Check Answer" Click="CheckAnswerButton_Click" FontSize="20" Margin="10"/>
+                <Button Content="Rekenen" Click="Button_Rekenen"/>
+            </StackPanel>
+
+            <!-- Image and counter on the right -->
+            <StackPanel Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center">
+                <Image Source="images/happydog.jpg" Width="100" Height="100"/>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <!-- Koekjes count -->
+                    <TextBlock Name="KoekjesCount" Text="Koekjes: 0" FontWeight="Bold" FontSize="16" Margin="10"/>
+                    <TextBlock Text="0" FontWeight="Bold" FontSize="16"/>
+                    <Button Content="Help"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
+
